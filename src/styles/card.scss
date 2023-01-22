@@ -1,0 +1,8 @@
+.card {
+  &__date {
+    display: flex;
+    align-items: center;
+
+    @include dateFont();
+  }
+}
