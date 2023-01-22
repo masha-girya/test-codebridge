@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/test-codebridge/static/css/main.073c9b0a.css",
-    "main.js": "/test-codebridge/static/js/main.5d227d8c.js",
+    "main.js": "/test-codebridge/static/js/main.41812362.js",
     "static/js/787.2baea305.chunk.js": "/test-codebridge/static/js/787.2baea305.chunk.js",
     "static/media/logo.svg": "/test-codebridge/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/test-codebridge/index.html",
     "main.073c9b0a.css.map": "/test-codebridge/static/css/main.073c9b0a.css.map",
-    "main.5d227d8c.js.map": "/test-codebridge/static/js/main.5d227d8c.js.map",
+    "main.41812362.js.map": "/test-codebridge/static/js/main.41812362.js.map",
     "787.2baea305.chunk.js.map": "/test-codebridge/static/js/787.2baea305.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.5d227d8c.js"
+    "static/js/main.41812362.js"
   ]
 }
