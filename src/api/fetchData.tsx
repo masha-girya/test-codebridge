@@ -1,6 +1,9 @@
 import { Article } from "../types/Article";
+import { Data } from "../types/Data";
 
-const BASE_URL = 'https://api.spaceflightnewsapi.net/v3/articles';
+const BASE_URL = 'https://newsapi.org/v2/everything?q=nasa&pageLimit=100';
+
+const API_KEY = '&apiKey=7958779e1d5b404ba26c8c8dca0bde40';
 
 function wait(delay: number) {
   return new Promise((resolve) => {
@@ -8,8 +11,8 @@ function wait(delay: number) {
   });
 }
 
-function get<T>(url: string): Promise<T> {
-  const fullURL = BASE_URL + url;
+function get<T>(url = ''): Promise<T> {
+  const fullURL = BASE_URL + url + API_KEY;
 
   return wait(300)
     .then(() => fetch(fullURL))
@@ -22,5 +25,5 @@ function get<T>(url: string): Promise<T> {
     });
 }
 
-export const getArticles = () => get<Article[]>('?_limit=100');
+export const getArticles = () => get<Data>();
 export const getArticleById = (id: number) => get<Article>(`/${id}`);

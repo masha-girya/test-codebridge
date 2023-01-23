@@ -1,8 +1,10 @@
-.card {
-  &__date {
-    display: flex;
-    align-items: center;
+.Card {
+  max-width: 368px;
+  height: 530px;
 
-    @include dateFont();
+  transition: 0.5s !important;
+
+  &:hover {
+    transform: scale(1.05);
   }
 }
