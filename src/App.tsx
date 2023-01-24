@@ -24,4 +24,4 @@ export const App: React.FC = () => {
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
-}
+};
