@@ -1,6 +1,5 @@
 {
   "name": "test-codebridge",
-  "homepage": "https://masha-girya.github.io/test-codebridge",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
