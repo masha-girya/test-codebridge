@@ -15,7 +15,7 @@ import {
   normalizedTitle,
   normalizedDescription,
   highlightText
-} from '../../utils/normailizing';
+} from '../../utils/normalizing';
 import { Article } from '../../types/Article';
 import { ArticleContext } from '../Context/ArticleContext';
 import CalendarTodayOutlineIcon from '@material-ui/icons/CalendarTodayOutlined';
