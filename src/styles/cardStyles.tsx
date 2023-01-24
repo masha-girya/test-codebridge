@@ -1,4 +1,15 @@
 import { makeStyles } from '@material-ui/core';
+import { createTheme } from '@mui/material';
+
+export const theme = createTheme({
+  components: {
+    MuiGrid: {
+      defaultProps: {
+        mt: 0,
+      },
+    },
+  },
+});
 
 export const useStyles = makeStyles({
   root: {

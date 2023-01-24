@@ -1,9 +1,6 @@
 import { Article } from "../types/Article";
-import { Data } from "../types/Data";
 
-const BASE_URL = 'https://newsapi.org/v2/everything?q=nasa&pageLimit=100';
-
-const API_KEY = '&apiKey=7958779e1d5b404ba26c8c8dca0bde40';
+const BASE_URL = 'https://api.spaceflightnewsapi.net/v3/articles';
 
 function wait(delay: number) {
   return new Promise((resolve) => {
@@ -11,11 +8,10 @@ function wait(delay: number) {
   });
 }
 
-function get<T>(url = ''): Promise<T> {
-  const fullURL = BASE_URL + url + API_KEY;
+function get<T>(url: string): Promise<T> {
+  const fullURL = BASE_URL + url;
 
-  return wait(300)
-    .then(() => fetch(fullURL))
+  return fetch(fullURL)
     .then((response) => {
       if (!response.ok) {
         throw new Error('Data can not be loaded from server');
@@ -25,5 +21,6 @@ function get<T>(url = ''): Promise<T> {
     });
 }
 
-export const getArticles = () => get<Data>();
+export const getArticles = () => get<Article[]>('?_limit=100');
 export const getArticleById = (id: number) => get<Article>(`/${id}`);
+export const getArticlesWithQuery = (query: string) => get<Article[]>(`?_limit=100&title_contains=${query}&summary_contains=${query}`);

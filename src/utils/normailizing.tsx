@@ -1,3 +1,5 @@
+import React, { Dispatch, SetStateAction } from "react";
+
 export const normalizedDate = (date: string) => {
   const normDate = new Date(date)
     .toUTCString()
@@ -25,4 +27,28 @@ export const normalizedDescription = (desc: string) => {
   const normDescription = desc.slice(0, 97).replace(/<\/?[^>]+(>|$)/g, "");
 
   return normDescription + '...';
+}
+
+export const highlightText = (text: string, higlight: string) => {
+  const parts = text.split(new RegExp(`(${higlight})`, "gi"));
+
+  return parts.map((part: string, index) => (
+    <React.Fragment key={index}>
+      {part.toLowerCase() === higlight.toLowerCase() ? (
+        <span style={{ backgroundColor: "#FFFF00" }}>{part}</span>
+      ) : (
+        part
+      )}
+    </React.Fragment>
+  ));
+}
+
+export const debounce = (f: Dispatch<SetStateAction<string>>, delay: number) => {
+  let timerId: number;
+
+  return (...args: string[]) => {
+    clearTimeout(timerId);
+
+    timerId = setTimeout(f, delay, ...args)
+  }
 }
