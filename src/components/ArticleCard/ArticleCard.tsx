@@ -74,7 +74,7 @@ export const ArticleCard: React.FC<Props> = ({ data, query }) => {
   };
 
   return (
-    <Grid item>
+    <Grid item md={6} lg={4}>
       <RouterLink
         to={`/articles/${id}`}
         className="router-link"

@@ -61,7 +61,7 @@ export const HomePage: React.FC = () => {
   
   return (
     <main>
-      <Container maxWidth="lg" component="div" sx={{mt: 6}}>
+      <Container maxWidth="lg" component="div" sx={{mt: 6, mb: 6}}>
         <QueryForm
           query={query}
           setQuery={setQuery}
@@ -79,7 +79,7 @@ export const HomePage: React.FC = () => {
               <Grid
                 container
                 component="div"
-                justifyContent="space-evenly"
+                justifyContent="start"
                 columnSpacing={3}
                 rowSpacing={4}
               >

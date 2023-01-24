@@ -1,14 +1,11 @@
 import React, { useContext } from 'react';
-import { Box, Typography, Link } from '@mui/material';
+import { Box, Link } from '@mui/material';
 import { Link as RouterLink } from 'react-router-dom';
 import arrowLeft from '../../icons/arrow-left.svg';
 import { makeStyles } from '@material-ui/core';
 import { ArticleContext } from '../Context/ArticleContext';
 
 const useStyles = makeStyles({
-  summary: {
-    marginTop: 20,
-  },
   readMore: {
     paddingLeft: 8,
     color: '#363636',
@@ -33,24 +30,13 @@ export const ArticlePage: React.FC = () => {
 
         <div className="ArticlePage__content-box">
           <Box className="ArticlePage__text">
-            <Typography
-              sx={{ mb: 6 }}
-              color="textPrimary"
-              variant="h5"
-              component="h5"
-              className="ArticlePage__text--title"
-            >
+            <h5 className="ArticlePage__text--title">
               {article?.title}
-            </Typography>
+            </h5>
 
-            <Typography
-              sx={{ letterSpacing: 1.5 }}
-              color="textPrimary"
-              variant="body2"
-              component="p"
-            >
+            <p className="ArticlePage__text--par">
               {article?.summary}
-            </Typography>
+            </p>
           </Box>
 
           <Box className="ArticlePage__bottom-container">

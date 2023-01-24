@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
 import { ThemeProvider,createTheme } from '@mui/material/styles';
 import { App } from './App';
@@ -27,11 +27,11 @@ const mainTheme = createTheme({
   }
 });
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
+// const root = ReactDOM.createRoot(
+//   document.getElementById('root') as HTMLElement
+// );
 
-root.render(
+ReactDOM.render(
   <React.StrictMode>
     <ArticleProvider>
       <ThemeProvider theme={mainTheme}>
@@ -40,5 +40,18 @@ root.render(
         </Router>
       </ThemeProvider>
     </ArticleProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
+
+// root.render(
+//   <React.StrictMode>
+//     <ArticleProvider>
+//       <ThemeProvider theme={mainTheme}>
+//         <Router>
+//           <App />
+//         </Router>
+//       </ThemeProvider>
+//     </ArticleProvider>
+//   </React.StrictMode>
+// );
