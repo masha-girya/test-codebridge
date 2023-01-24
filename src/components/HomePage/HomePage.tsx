@@ -4,23 +4,15 @@ import Container from '@mui/system/Container';
 import { getArticles } from '../../api/fetchData';
 import { Article } from '../../types/Article';
 import { ArticleCard } from '../ArticleCard';
+import { normalizedDescription, normalizedTitle, debounce } from '../../utils/normalizing';
+import { QueryForm } from '../QueryForm';
 import { Loader } from '../Loader';
-import {
-  FormControl,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-} from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import SearchIcon from '@material-ui/icons/Search';
-import { normalizedDescription, normalizedTitle, debounce } from '../../utils/normailizing';
 
 export const HomePage: React.FC = () => {
   const [articles, setArticles] = useState<Article[] | null>([]);
   const [query, setQuery] = useState('');
   const [appliedQuery, setAppliedQuery] = useState('');
   const [loader, setLoader] = useState(true);
-  const theme = useTheme();
 
   const applyQuery = useCallback(
     debounce(setAppliedQuery, 1000),
@@ -69,34 +61,12 @@ export const HomePage: React.FC = () => {
   
   return (
     <main>
-      <Container maxWidth="lg" component="div">
-        <FormControl fullWidth sx={{'max-width': 600, height: 80, fontFamily: theme.typography.fontFamily }}>
-          <InputLabel
-            htmlFor="outlined-basic"
-            size="normal"
-            sx={{
-              position: 'relative',
-              fontFamily: theme.typography.fontFamily,
-              fontWeight: 600,
-              fontSize: 18,
-              left: -12,
-            }}
-          >
-            Filter by keywords
-          </InputLabel>
-          <OutlinedInput
-            type="search"
-            id="outlined-basic"
-            className="input"
-            startAdornment={<InputAdornment position="start"><SearchIcon /></InputAdornment>}
-            placeholder="The most successful IT companies in 2020"
-            value={query}
-            onChange={(event) => {
-              setQuery(event.target.value);
-              applyQuery(event.target.value);
-            }}
-          />
-        </FormControl>
+      <Container maxWidth="lg" component="div" sx={{mt: 6}}>
+        <QueryForm
+          query={query}
+          setQuery={setQuery}
+          applyQuery={applyQuery}
+        />
 
         {loader
           ?(<Loader />)
@@ -109,7 +79,7 @@ export const HomePage: React.FC = () => {
               <Grid
                 container
                 component="div"
-                justifyContent="start"
+                justifyContent="space-evenly"
                 columnSpacing={3}
                 rowSpacing={4}
               >
