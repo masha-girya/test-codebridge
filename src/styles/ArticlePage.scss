@@ -34,7 +34,30 @@
     border-radius: 5px;
 
     &--title {
+      color: #363636;
       text-align: center;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 24px;
+      line-height: 29px;
+
+      @media (max-width: 680px) {
+        font-size: 20px;
+      }
+    }
+
+    &--par {
+      color: #000;
+
+      font-style: normal;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 150%;
+
+      @media (max-width: 680px) {
+        font-size: 16px;
+      }
     }
   }
 
