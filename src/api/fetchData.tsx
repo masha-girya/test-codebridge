@@ -15,8 +15,5 @@ function get<T>(url: string): Promise<T> {
     });
 }
 
-export const getArticles = () => get<Article[]>('?_limit=20');
+export const getArticles = () => get<Article[]>('?_limit=100');
 export const getArticleById = (id: number) => get<Article>(`/${id}`);
-export const getArticlesWithQuery = (query: string) => get<Article[]>(
-  `?_limit=20&title_contains=${query}&summary_contains=${query}`
-);
