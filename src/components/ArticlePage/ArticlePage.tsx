@@ -13,7 +13,7 @@ export const ArticlePage: React.FC = () => {
     <div className="ArticlePage">
       <Box className="ArticlePage__container">
         <Box className="ArticlePage__image-box">
-          <img src={article?.urlToImage} alt={article?.title} className="ArticlePage__image-box--img" />
+          <img src={article?.imageUrl} alt={article?.title} className="ArticlePage__image-box--img" />
         </Box>
 
         <div className="ArticlePage__content-box">
@@ -34,7 +34,7 @@ export const ArticlePage: React.FC = () => {
               variant="body2"
               component="p"
             >
-              {article?.description}
+              {article?.summary}
 
               {/* At aliquet id amet, viverra a magna lorem urna. Nibh scelerisque quam quam massa amet, sollicitudin vel non. Gravida laoreet neque tincidunt eu egestas massa vitae nibh. Nec ullamcorper amet tortor, velit. Dictum pellentesque dolor sit duis sed nibh. Euismod rutrum pellentesque semper mattis aliquet ornare. Cursus maecenas massa, arcu ac adipiscing odio facilisis ac eu.
               In eget ipsum, sed ultrices tempor consequat, elementum cras porta. Sagittis etiam dictumst at duis praesent a. Malesuada odio amet aenean diam. Tincidunt lorem faucibus neque aliquet lobortis feugiat sed aliquam pulvinar. Praesent aliquet ut tempus feugiat placerat quis duis mauris nibh. Eu ullamcorper id feugiat sit risus turpis mi. Tristique posuere sed convallis magna eu vulputate. Cum sit in hac felis blandit. Cursus eu porta lectus mollis nisi, consectetur ac. Ornare vitae lectus iaculis nibh ac et. Adipiscing amet in parturient etiam fames. Facilisi id eu sem in elementum. Lacus, ipsum morbi vel purus ut arcu laoreet id eu.
