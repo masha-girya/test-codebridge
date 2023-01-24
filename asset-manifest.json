@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/test-codebridge/static/css/main.dbe36d33.css",
-    "main.js": "/test-codebridge/static/js/main.b4c9523c.js",
+    "main.css": "/test-codebridge/static/css/main.653b3239.css",
+    "main.js": "/test-codebridge/static/js/main.b2344659.js",
+    "static/media/cosmos.jpg": "/test-codebridge/static/media/cosmos.20c0f66d7766bda12e54.jpg",
     "index.html": "/test-codebridge/index.html",
     "static/media/arrow-left.svg": "/test-codebridge/static/media/arrow-left.5ab17a18fdc37c472dc3a605f61c0564.svg",
     "static/media/arrow-right.svg": "/test-codebridge/static/media/arrow-right.da47d01a9fb2ed34b3c39cae87ee5638.svg",
-    "main.dbe36d33.css.map": "/test-codebridge/static/css/main.dbe36d33.css.map",
-    "main.b4c9523c.js.map": "/test-codebridge/static/js/main.b4c9523c.js.map"
+    "main.653b3239.css.map": "/test-codebridge/static/css/main.653b3239.css.map",
+    "main.b2344659.js.map": "/test-codebridge/static/js/main.b2344659.js.map"
   },
   "entrypoints": [
-    "static/css/main.dbe36d33.css",
-    "static/js/main.b4c9523c.js"
+    "static/css/main.653b3239.css",
+    "static/js/main.b2344659.js"
   ]
 }
