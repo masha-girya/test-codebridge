@@ -1,0 +1,25 @@
+.results {
+  position: relative;
+
+  margin-top: 40px;
+
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 150%;
+  color: #363636;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    top: 25px;
+    left: 0;
+
+    height: 2px;
+    width: 100%;
+
+    background-color: #EAEAEA;
+  }
+}

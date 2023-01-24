@@ -1,10 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { HashRouter as Router } from 'react-router-dom';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { mainTheme } from './theme/theme';
+import { ThemeProvider,createTheme } from '@mui/material/styles';
 import { App } from './App';
 import { ArticleProvider } from './components/Context/ArticleContext';
+
+const mainTheme = createTheme({
+  components: {
+    MuiGrid: {
+      defaultProps: {
+        mt: 0,
+      },
+    },
+  },
+  typography: {
+    fontFamily: [
+      'Montserrat',
+      'sans-serif'
+    ].join(','),
+  },
+  palette: {
+    primary: {
+      main: '#E5E5E5',
+      contrastText: '#363636',
+    },
+  }
+});
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

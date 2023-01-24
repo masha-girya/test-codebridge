@@ -1,14 +1,25 @@
 import React, { useContext } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
-
-import { Grid, Card, CardContent, CardMedia, CardActions, Typography, Link, makeStyles } from '@material-ui/core';
-
-import CalendarTodayOutlineIcon from '@material-ui/icons/CalendarTodayOutlined';
-import arrowRight from '../../icons/arrow-right.svg';
-
-import { normalizedDate, normalizedTitle, normalizedDescription, highlightText } from '../../utils/normailizing';
+import {
+  Grid,
+  Card,
+  CardContent,
+  CardMedia,
+  CardActions,
+  Typography,
+  Link,
+  makeStyles
+} from '@material-ui/core';
+import { 
+  normalizedDate,
+  normalizedTitle,
+  normalizedDescription,
+  highlightText
+} from '../../utils/normailizing';
 import { Article } from '../../types/Article';
 import { ArticleContext } from '../Context/ArticleContext';
+import CalendarTodayOutlineIcon from '@material-ui/icons/CalendarTodayOutlined';
+import arrowRight from '../../icons/arrow-right.svg';
 
 interface Props {
   data: Article,
@@ -31,14 +42,17 @@ const useStyles = makeStyles({
     display: 'flex',
     alignItems: 'center',
     marginTop: 25,
+    fontFamily: 'Montserrat'
   },
   title: {
     height: 65,
     marginTop: 24,
     overflow: 'hidden',
+    fontFamily: 'Montserrat'
   },
   summary: {
     marginTop: 20,
+    fontFamily: 'Montserrat'
   },
   readMore: {
     paddingLeft: 8,
@@ -57,64 +71,69 @@ export const ArticleCard: React.FC<Props> = ({ data, query }) => {
 
   const handleClick = (event: React.MouseEvent, articleToOpen: Article) => {
     setArticle(articleToOpen);
-  }
+  };
 
   return (
     <Grid item>
-      <Card className="Card">
-        <RouterLink to={`articles/${id}`} onClick={(event) => handleClick(event, data)}>
+      <RouterLink
+        to={`/articles/${id}`}
+        className="router-link"
+        onClick={(event) => handleClick(event, data)}
+      >
+        <Card className="Card">
           <CardMedia
             className={classes.media}
             image={imageUrl}
             title={title}
           />
-        </RouterLink>
 
-        <CardContent>
-          <Typography
-            className={classes.dateStamp}
-            gutterBottom
-            color="textSecondary"
-            component="p"
-          >
-            <CalendarTodayOutlineIcon className={classes.icon} />
-            {'  '}
-            {normalizedDate(publishedAt)}
-          </Typography>
+          <CardContent>
+            <Typography
+              className={classes.dateStamp}
+              gutterBottom
+              color="textSecondary"
+              component="p"
+            >
+              <CalendarTodayOutlineIcon className={classes.icon} />
+              {'  '}
+              {normalizedDate(publishedAt)}
+            </Typography>
 
-          <Typography 
-            variant="h5"
-            component="h2"
-            className={classes.title}
-          >
-            {highlightText(cuttedTitle, query)}
-          </Typography>
+            <Typography 
+              variant="h5"
+              component="h2"
+              className={classes.title}
+            >
+              {highlightText(cuttedTitle, query)}
+            </Typography>
 
-          <Typography
-            variant="body2"
-            color="textSecondary"
-            component="p"
-            className={classes.summary}
-          >
-            {highlightText(cuttedDesription, query)}
-          </Typography>
-        </CardContent>
+            <Typography
+              variant="body2"
+              color="textSecondary"
+              component="p"
+              className={classes.summary}
+            >
+              {highlightText(cuttedDesription, query)}
+            </Typography>
+          </CardContent>
 
-        <CardActions>
-          <Link
-            component={RouterLink}
-            to={`/articles/${id}`}
-            className={classes.readMore}
-          >
-            Read more
-            <img 
-              src={arrowRight}
-              alt="Read more arrow"
-              className="arrow"
-            />
-          </Link>
-        </CardActions>
-      </Card>
+          <CardActions>
+            <Link
+              component={RouterLink}
+              to={`/articles/${id}`}
+              className={classes.readMore}
+              onClick={(event) => handleClick(event, data)}
+            >
+              Read more
+              <img 
+                src={arrowRight}
+                alt="Read more arrow"
+                className="arrow"
+              />
+            </Link>
+          </CardActions>
+        </Card>
+      </RouterLink>
     </Grid>
   );
 };

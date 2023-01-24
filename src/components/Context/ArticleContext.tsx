@@ -8,6 +8,7 @@ interface ArticleProps {
 
 export const ArticleContext = React.createContext<ArticleProps>({
   article: null,
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
   setArticle: () => {},
 });
 
